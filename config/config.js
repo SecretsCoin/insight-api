@@ -23,15 +23,15 @@ if (process.env.INSIGHT_NETWORK === 'livenet') {
   env = 'livenet';
   db = home;
   port = '3000';
-  b_port = '8332';
-  p2p_port = '8333';
+  b_port = '5515';
+  p2p_port = '5516';
 }
 else {
   env = 'testnet';
   db = home + '/testnet';
   port = '3001';
-  b_port = '51996';
-  p2p_port = '51997';
+  b_port = '15515';
+  p2p_port = '15516';
 }
 
 
@@ -54,9 +54,9 @@ var isWin = /^win/.test(process.platform);
 var isMac = /^darwin/.test(process.platform);
 var isLinux = /^linux/.test(process.platform);
 if (!dataDir) {
-  if (isWin) dataDir = '%APPDATA%\\DogeCoinDark\\';
-  if (isMac) dataDir = process.env.HOME + '/Library/Application Support/DogeCoinDark/';
-  if (isLinux) dataDir = process.env.HOME + '/.DogeCoinDark/';
+  if (isWin) dataDir = '%APPDATA%\\TBCoin\\';
+  if (isMac) dataDir = process.env.HOME + '/Library/Application Support/TBCoin/';
+  if (isLinux) dataDir = process.env.HOME + '/.TBCoin/';
 }
 dataDir += network === 'testnet' ? 'testnet' : '';
 
@@ -66,8 +66,8 @@ var ignoreCache      = process.env.INSIGHT_IGNORE_CACHE || 0;
 
 var bitcoindConf = {
   protocol:  process.env.BITCOIND_PROTO || 'http',
-  user: process.env.BITCOIND_USER || 'user',
-  pass: process.env.BITCOIND_PASS || 'pass',
+  user: process.env.BITCOIND_USER || 'abc',
+  pass: process.env.BITCOIND_PASS || '123',
   host: process.env.BITCOIND_HOST || '127.0.0.1',
   port: process.env.BITCOIND_PORT || b_port,
   p2pPort: process.env.BITCOIND_P2P_PORT || p2p_port,
